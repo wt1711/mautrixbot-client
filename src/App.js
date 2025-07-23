@@ -65,12 +65,17 @@ function App() {
   };
 
   const handleLogout = async () => {
-    if (client) {
-      await client.logout();
+    try {
+      if (client) {
+        await client.logout();
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      localStorage.removeItem('matrix-client');
+      setClient(null);
+      setDmRoomId(null);
     }
-    localStorage.removeItem('matrix-client');
-    setClient(null);
-    setDmRoomId(null);
   };
 
   const startDm = async () => {
