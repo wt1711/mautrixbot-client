@@ -6,12 +6,12 @@ import DmChatWindow from './components/DmChatWindow';
 import LoggedIn from './components/LoggedIn';
 
 function App() {
-  const [homeserver] = useState('http://pocket-wm.local:8008');
+  const [homeserver] = useState('https://matrix.lvbrd.xyz');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [client, setClient] = useState(null);
-  const [dmUserId, setDmUserId] = useState('@metabot:pocket-wm.local');
+  const [dmUserId, setDmUserId] = useState('@metabot:matrix.lvbrd.xyz');
   const [dmRoomId, setDmRoomId] = useState(null);
   const [step, setStep] = useState('email'); // 'email' or 'password'
 
